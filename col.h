@@ -15,6 +15,9 @@ void color_set(){
     while (1); // halt!
   }
 
+  delay(5000);
+
+
   // use these three pins to drive an LED
 #if defined(ARDUINO_ARCH_ESP32)
   ledcAttachPin(redpin, 1);
@@ -35,11 +38,6 @@ void color_set(){
     x = pow(x, 2.5);
     x *= 255;
 
-    if (commonAnode) {
-      gammatable[i] = 255 - x;
-    } else {
-      gammatable[i] = x;
-    }
-    //Serial.println(gammatable[i]);
+    
   }
 }
